@@ -12,7 +12,6 @@
 		wl-clipboard
 		jetbrains-mono
 		gnome-tweaks
-		gnomeExtensions.blur-my-shell
 		gnome-extension-manager
 		dconf
 	];
