@@ -33,7 +33,6 @@
 		gnome-tour
 		gnome-contacts
 		gnome-maps
-		extensions
 		totem
 		simple-scan
 	]);
