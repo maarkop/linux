@@ -4,7 +4,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos";
-
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Belgrade";
@@ -33,8 +32,7 @@
     isNormalUser = true;
     description = "Marko";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    ];
+    packages = with pkgs; [];
   };
 
   services.displayManager.autoLogin.enable = true;

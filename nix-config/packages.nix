@@ -21,4 +21,24 @@
     "app.zen_browser.zen"
 		"com.google.AndroidStudio"
   ];
+
+	environment.gnome.excludePackages = (with pkgs; [
+		cheese
+		epiphany
+		geary
+		gedit
+		gnome-characters
+		gnome-music
+		gnome-photos
+		gnome-tour
+		gnome-contacts
+		gnome-maps
+		extensions
+		totem
+		simple-scan
+	]);
+
+	services.xserver.excludePackages = (with pkgs; [
+		xterm
+	]);
 }
