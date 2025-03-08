@@ -7,15 +7,13 @@
   };
 
   outputs = { self, nix-flatpak, nixpkgs }: {
-
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-
-    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-
-    nixosConfigurations.marko = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       modules = [
         nix-flatpak.nixosModules.nix-flatpak
+				./hardware-configuration.nix
+				./packages.nix
         ./configuration.nix
+				./gnome.nix
       ];
     };
 
