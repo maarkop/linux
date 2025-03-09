@@ -8,17 +8,19 @@
 		gcc
 		dconf-editor
 		storj-uplink
-		flutter
 		wl-clipboard
 		jetbrains-mono
 		gnome-tweaks
 		gnome-extension-manager
 		dconf
+		
+		clang cmake ninja openjdk17
+		pkg-config android-studio
+		flutter android-tools
 	];
 
   services.flatpak.packages = [
     "app.zen_browser.zen"
-		"com.google.AndroidStudio"
   ];
 
 	environment.gnome.excludePackages = (with pkgs; [

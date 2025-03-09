@@ -31,7 +31,7 @@
   users.users.marko = {
     isNormalUser = true;
     description = "Marko";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "adbusers"];
     packages = with pkgs; [];
   };
 
