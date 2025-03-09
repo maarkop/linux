@@ -2,6 +2,8 @@
 
   nixpkgs.config.allowUnfree = true;
   services.flatpak.enable = true;
+	documentation.nixos.enable = false;
+	services.printing.enable = false;
 
   environment.systemPackages = with pkgs;[
 		neovim fish git flatpak
@@ -27,9 +29,11 @@
 
 	environment.gnome.excludePackages = (with pkgs; [
 		cheese
+		snapshot
 		epiphany
 		geary
 		gedit
+		gnome-shell-extensions
 		gnome-characters
 		gnome-music
 		gnome-photos
@@ -38,6 +42,8 @@
 		gnome-maps
 		totem
 		simple-scan
+		seahorse
+		yelp
 	]);
 
 	programs.fish = {
