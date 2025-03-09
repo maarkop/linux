@@ -10,7 +10,6 @@
 
 		#Gnome
 		jetbrains-mono
-		gnome-tweaks
 		gnome-extension-manager
 		dconf dconf-editor
 		
@@ -24,6 +23,7 @@
   services.flatpak.packages = [
     "app.zen_browser.zen"
   ];
+
 
 	environment.gnome.excludePackages = (with pkgs; [
 		cheese
@@ -39,6 +39,13 @@
 		totem
 		simple-scan
 	]);
+
+	programs.fish = {
+		enable = true;
+		shellAliases = {
+			flutter = "steam-run flutter";
+		};
+	};
 
 	services.xserver.excludePackages = (with pkgs; [ xterm ]);
 }
