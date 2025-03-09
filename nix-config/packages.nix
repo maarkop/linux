@@ -17,7 +17,7 @@
 		clang cmake ninja openjdk21
 		pkg-config android-studio
 		flutter android-tools
-		steam-run
+		steam-run google-chrome
 	];
 
   services.flatpak.packages = [
