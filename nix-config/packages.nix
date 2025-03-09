@@ -5,18 +5,20 @@
 
   environment.systemPackages = with pkgs;[
 		neovim fish git flatpak
-		gcc
-		dconf-editor
-		storj-uplink
+		gcc storj-uplink
 		wl-clipboard
+
+		#Gnome
 		jetbrains-mono
 		gnome-tweaks
 		gnome-extension-manager
-		dconf
+		dconf dconf-editor
 		
-		clang cmake ninja openjdk17
+		#Flutter
+		clang cmake ninja openjdk21
 		pkg-config android-studio
 		flutter android-tools
+		steam-run
 	];
 
   services.flatpak.packages = [
@@ -38,7 +40,5 @@
 		simple-scan
 	]);
 
-	services.xserver.excludePackages = (with pkgs; [
-		xterm
-	]);
+	services.xserver.excludePackages = (with pkgs; [ xterm ]);
 }

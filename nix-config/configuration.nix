@@ -31,7 +31,7 @@
   users.users.marko = {
     isNormalUser = true;
     description = "Marko";
-    extraGroups = [ "networkmanager" "wheel" "adbusers"];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" "kvm"];
     packages = with pkgs; [];
   };
 
@@ -43,5 +43,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes"];
   users.defaultUserShell = "/run/current-system/sw/bin/fish";
   system.stateVersion = "24.11"; 
+
 
 }
