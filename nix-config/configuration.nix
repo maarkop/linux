@@ -44,5 +44,4 @@
   users.defaultUserShell = "/run/current-system/sw/bin/fish";
   system.stateVersion = "24.11"; 
 
-
 }

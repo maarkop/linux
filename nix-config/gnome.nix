@@ -7,6 +7,15 @@
 		app-icons-taskbar
   ];
 
+	fonts.fontconfig = {
+		enable = true;
+		defaultFonts = {
+			monospace = [ "JetBrains Mono NL Semi-Bold" ];
+			serif = [ "JetBrains Mono NL Semi-Bold" ];
+			sansSerif = [ "JetBrains Mono NL Semi-Bold" ];
+		};
+	};
+
 
 	programs.dconf.profiles = {
     user.databases = [{
