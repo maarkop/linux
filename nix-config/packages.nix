@@ -5,15 +5,21 @@
 	documentation.nixos.enable = false;
 	services.printing.enable = false;
 
+
   environment.systemPackages = with pkgs;[
 		neovim fish git flatpak
 		gcc storj-uplink
 		wl-clipboard
-
+		protonvpn-gui
+		digikam geeqie
+		firebase-tools
 		#Gnome
 		jetbrains-mono
 		gnome-extension-manager
 		dconf dconf-editor
+		deluge
+		beets
+		vlc
 		
 		#Flutter
 		clang cmake ninja openjdk21
@@ -24,6 +30,9 @@
 
   services.flatpak.packages = [
     "app.zen_browser.zen"
+		"com.github.Flacon"
+		"app.drey.EarTag"
+		"com.github.tchx84.Flatseal"
   ];
 
 
