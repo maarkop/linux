@@ -20,10 +20,9 @@
 		vlc
 		
 		#Flutter
-		haskellPackages.linux-blkid
 		clang cmake ninja openjdk21
 		pkg-config android-studio
-		android-tools gtk3
+		flutter android-tools
 		steam-run google-chrome
 	];
 
