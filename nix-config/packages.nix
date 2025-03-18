@@ -10,27 +10,25 @@
 		neovim fish git flatpak
 		gcc storj-uplink
 		wl-clipboard
-		protonvpn-gui
-		digikam geeqie
 		firebase-tools
+
 		#Gnome
 		jetbrains-mono
 		gnome-extension-manager
 		dconf dconf-editor
 		deluge
-		beets
 		vlc
 		
 		#Flutter
+		haskellPackages.linux-blkid
 		clang cmake ninja openjdk21
 		pkg-config android-studio
-		flutter android-tools
+		android-tools gtk3
 		steam-run google-chrome
 	];
 
   services.flatpak.packages = [
     "app.zen_browser.zen"
-		"com.github.Flacon"
 		"app.drey.EarTag"
 		"com.github.tchx84.Flatseal"
   ];

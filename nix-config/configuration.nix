@@ -33,6 +33,9 @@
     packages = with pkgs; [];
   };
 
+	programs.nix-ld.enable = true;
+	virtualisation.libvirtd.enable = true;
+
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "marko";
   systemd.services."getty@tty1".enable = false;
