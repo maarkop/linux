@@ -5,26 +5,34 @@
 	documentation.nixos.enable = false;
 	services.printing.enable = false;
 
-
   environment.systemPackages = with pkgs;[
-		neovim fish git flatpak
-		gcc storj-uplink
-		wl-clipboard
-		firebase-tools
+		#System
+		fish flatpak zsh
+		storj-uplink
 
 		#Gnome
-		jetbrains-mono
+		nerd-fonts.jetbrains-mono
 		gnome-extension-manager
-		dconf dconf-editor
-		deluge
-		vlc
+		dconf dconf-editor gnome-tweaks
+
+		#Development
+		neovim git gcc 
+		wl-clipboard
 		
 		#Flutter
-		clang cmake ninja openjdk21
-		pkg-config android-studio
-		flutter android-tools
+		android-studio
+		firebase-tools
+		flutter openjdk17
 		steam-run google-chrome
+
+		#Media
+		deluge vlc
+
+		#Games
+		retroarchFull
 	];
+
+	fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 
   services.flatpak.packages = [
     "app.zen_browser.zen"
@@ -33,31 +41,29 @@
   ];
 
 
-	environment.gnome.excludePackages = (with pkgs; [
-		cheese
-		snapshot
-		epiphany
-		geary
-		gedit
-		gnome-shell-extensions
-		gnome-characters
-		gnome-music
-		gnome-photos
-		gnome-tour
-		gnome-contacts
-		gnome-maps
-		totem
-		simple-scan
-		seahorse
-		yelp
-	]);
 
 	programs.fish = {
 		enable = true;
 		shellAliases = {
-			flutter = "steam-run flutter";
+			#flutter = "steam-run flutter";
 		};
+		shellInit = ''
+      export JAVA_HOME="${pkgs.openjdk17.home}"
+			export CHROME_EXECUTABLE="${pkgs.google-chrome}/bin/google-chrome-stable"
+    '';
 	};
 
+	  fonts.fontconfig.enable = true;
+
 	services.xserver.excludePackages = (with pkgs; [ xterm ]);
+
+	environment.gnome.excludePackages = (with pkgs; [
+		geary gedit totem seahorse
+		gnome-tour gnome-contacts
+		gnome-music gnome-photos
+		cheese snapshot epiphany
+		gnome-shell-extensions
+		gnome-maps simple-scan
+		gnome-characters yelp
+	]);
 }

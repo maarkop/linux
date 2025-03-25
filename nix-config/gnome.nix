@@ -93,7 +93,17 @@
 					search = false;
 				};
         "org/gnome/shell/extensions/aztaskbar".notification-badges = false;
+
+				"org/gnome/desktop/interface" = {
+					font-name = "JetBrains Mono NL Nerd Font 10"; # Adjust size as needed
+					document-font-name = "JetBrains Mono NL Nerd Font 10";
+					monospace-font-name = "JetBrains Mono NL Nerd Font 10";
+				};
+				"org/gnome/desktop/wm/preferences" = {
+					titlebar-font = "JetBrains Mono NL Nerd Font 10";
+				};
       };
     }];
   };
+
 }

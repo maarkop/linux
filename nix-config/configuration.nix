@@ -29,13 +29,16 @@
   users.users.marko = {
     isNormalUser = true;
     description = "Marko";
-    extraGroups = [ "networkmanager" "wheel" "adbusers" "kvm"];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" "kvm" "libvirtd"];
     packages = with pkgs; [];
   };
 
 	programs.nix-ld.enable = true;
+	programs.adb.enable = true;
 	virtualisation.libvirtd.enable = true;
+	boot.kernelModules = [ "kvm-amd" ];
 
+	virtualisation.waydroid.enable = true;
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "marko";
   systemd.services."getty@tty1".enable = false;
