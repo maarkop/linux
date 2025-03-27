@@ -1,5 +1,5 @@
 { config, pkgs, ... } : let
-	androidHome =  "/opt/android-sdk/";
+	androidHome =  "${config.users.users.marko.home}/.local/share/android-sdk";
 in {
 
 	environment.variables = {
@@ -22,12 +22,12 @@ in {
     serviceConfig = {
       Type = "oneshot";
       ExecStart = ''
-				${pkgs.sdkmanager}/bin/sdkmanager "platform-tools" \
-				"build-tools;34.0.0" "cmdline-tools;9.0" \
-				"platforms;android-34" "skiaparser;3" \
-				"ndk-bundle;r28" "ndk;r28" "tools"
+				${pkgs.sdkmanager}/bin/sdkmanager "platforms;android-34" \
+				"build-tools;34.0.0" "ndk-bundle;r28" "platform-tools" \
+				"skiaparser;3" "tools" "cmdline-tools;9.0" "ndk;r28"
       '';
 			Environment = [ "ANDROID_HOME=${androidHome}" ];
+			User = "${config.users.users.marko.name}";
     };
     preStart = ''mkdir -p ${androidHome}'';
   };
