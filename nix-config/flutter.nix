@@ -1,5 +1,5 @@
 { config, pkgs, ... } : let
-	androidHome = "${config.users.users.marko.home}/Dev/SDK/Android";
+	androidHome =  "/opt/android-sdk";
 	sdkmanager = "${pkgs.sdkmanager}/bin/sdkmanager";
 in {
 
@@ -17,7 +17,7 @@ in {
 	programs.adb.enable = true;
 
 	systemd.services.android-sdk-setup = {
-    description = "Install Android SDK components using sdkmanager";
+    description = "Install Android SDK components using sdkmanager (as root)";
     after = [ "network.target" ];
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
@@ -27,7 +27,6 @@ in {
 				${sdkmanager} "platforms;android-34" "cmdline-tools;9.0" 
 				${sdkmanager} "ndk-bundle;r28" "ndk;r28" "skiaparser;3"
       '';
-      User = "${config.users.users.marko.name}";
 			Environment = [
         "ANDROID_HOME=${androidHome}"
       ];
