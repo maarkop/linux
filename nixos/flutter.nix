@@ -22,12 +22,13 @@ in {
     serviceConfig = {
       Type = "oneshot";
       ExecStart = ''
-				${pkgs.sdkmanager}/bin/sdkmanagerbuild-tools;34.0.0" \
-				"tools" "platforms;android-34" "cmdline-tools;9.0" \
-				"ndk-bundle;r28" "ndk;r28" "skiaparser;3"
+				${pkgs.sdkmanager}/bin/sdkmanager "platform-tools" \
+				"build-tools;34.0.0" "cmdline-tools;9.0" \
+				"platforms;android-34" "skiaparser;3" \
+				"ndk-bundle;r28" "ndk;r28" "tools"
       '';
 			Environment = [ "ANDROID_HOME=${androidHome}" ];
     };
-    preStart = '' mkdir -p ${androidHome} '';
+    preStart = ''mkdir -p ${androidHome}'';
   };
 }
