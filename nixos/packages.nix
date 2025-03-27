@@ -1,23 +1,22 @@
 { config, pkgs, ... } : {
 
-  nixpkgs.config.allowUnfree = true;
-  services.flatpak.enable = true;
 	documentation.nixos.enable = false;
+  nixpkgs.config.allowUnfree = true;
 	services.printing.enable = false;
+  services.flatpak.enable = true;
 
   environment.systemPackages = with pkgs;[
 		#System
 		fish flatpak zsh
-		storj-uplink ntfs3g
 
 		#Gnome
 		nerd-fonts.jetbrains-mono
 		gnome-extension-manager
 		dconf dconf-editor gnome-tweaks
+		wl-clipboard
 
 		#Development
 		neovim git gcc 
-		wl-clipboard
 		
 		#Flutter
 		firebase-tools
@@ -26,17 +25,15 @@
 		waydroid sdkmanager
 
 		#Media
-		deluge vlc
-
-		#Games
-		retroarchFull
+		storj-uplink deluge
+		retroarchFull vlc
 	];
 
 
   services.flatpak.packages = [
+		"com.github.tchx84.Flatseal"
     "app.zen_browser.zen"
 		"app.drey.EarTag"
-		"com.github.tchx84.Flatseal"
   ];
 
 	services.xserver.excludePackages = (with pkgs; [ xterm ]);

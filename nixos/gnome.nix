@@ -13,8 +13,8 @@
 		enable = true;
 		defaultFonts = {
 			monospace = [ "JetBrainsMono Nerd Font Mono Semi-Bold" ];
-			serif = [ "JetBrains MonoNerd Font Mono Semi-Bold" ];
 			sansSerif = [ "JetBrainsMono Nerd Font Mono Semi-Bold" ];
+			serif = [ "JetBrains MonoNerd Font Mono Semi-Bold" ];
 		};
 	};
 

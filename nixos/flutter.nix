@@ -1,5 +1,5 @@
 { config, pkgs, ... } : let
-	androidHome =  "${config.users.users.marko.home}/.local/share/android-sdk";
+	androidHome = "${config.users.users.marko.home}/.local/share/android-sdk";
 in {
 
 	environment.variables = {
