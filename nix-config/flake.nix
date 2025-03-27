@@ -11,8 +11,9 @@
       modules = [
         nix-flatpak.nixosModules.nix-flatpak
 				./hardware-configuration.nix
-				./packages.nix
         ./configuration.nix
+				./packages.nix
+				./flutter.nix
 				./gnome.nix
       ];
     };

@@ -8,7 +8,7 @@
   environment.systemPackages = with pkgs;[
 		#System
 		fish flatpak zsh
-		storj-uplink
+		storj-uplink ntfs3g
 
 		#Gnome
 		nerd-fonts.jetbrains-mono
@@ -20,10 +20,10 @@
 		wl-clipboard
 		
 		#Flutter
-		android-studio
 		firebase-tools
 		flutter openjdk17
 		steam-run google-chrome
+		waydroid sdkmanager
 
 		#Media
 		deluge vlc
@@ -32,28 +32,12 @@
 		retroarchFull
 	];
 
-	fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 
   services.flatpak.packages = [
     "app.zen_browser.zen"
 		"app.drey.EarTag"
 		"com.github.tchx84.Flatseal"
   ];
-
-
-
-	programs.fish = {
-		enable = true;
-		shellAliases = {
-			#flutter = "steam-run flutter";
-		};
-		shellInit = ''
-      export JAVA_HOME="${pkgs.openjdk17.home}"
-			export CHROME_EXECUTABLE="${pkgs.google-chrome}/bin/google-chrome-stable"
-    '';
-	};
-
-	  fonts.fontconfig.enable = true;
 
 	services.xserver.excludePackages = (with pkgs; [ xterm ]);
 

@@ -6,13 +6,15 @@
 		just-perfection
 		app-icons-taskbar
   ];
+	
+	fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 
 	fonts.fontconfig = {
 		enable = true;
 		defaultFonts = {
-			monospace = [ "JetBrains Mono NL Semi-Bold" ];
-			serif = [ "JetBrains Mono NL Semi-Bold" ];
-			sansSerif = [ "JetBrains Mono NL Semi-Bold" ];
+			monospace = [ "JetBrainsMono Nerd Font Mono Semi-Bold" ];
+			serif = [ "JetBrains MonoNerd Font Mono Semi-Bold" ];
+			sansSerif = [ "JetBrainsMono Nerd Font Mono Semi-Bold" ];
 		};
 	};
 
@@ -95,12 +97,12 @@
         "org/gnome/shell/extensions/aztaskbar".notification-badges = false;
 
 				"org/gnome/desktop/interface" = {
-					font-name = "JetBrains Mono NL Nerd Font 10"; # Adjust size as needed
-					document-font-name = "JetBrains Mono NL Nerd Font 10";
-					monospace-font-name = "JetBrains Mono NL Nerd Font 10";
+					monospace-font-name = [ "JetBrainsMono Nerd Font Mono Semi-Bold 10" ];
+					document-font-name = [ "JetBrainsMono Nerd Font Mono Semi-Bold 10" ];
+					font-name = [ "JetBrainsMono Nerd Font Mono Semi-Bold 10" ];
 				};
 				"org/gnome/desktop/wm/preferences" = {
-					titlebar-font = "JetBrains Mono NL Nerd Font 10";
+					titlebar-font = "JetBrainsMono Nerd Font Mono Semi-Bold 10";
 				};
       };
     }];

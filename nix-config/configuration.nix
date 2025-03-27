@@ -33,19 +33,14 @@
     packages = with pkgs; [];
   };
 
-	programs.nix-ld.enable = true;
-	programs.adb.enable = true;
-	virtualisation.libvirtd.enable = true;
-	boot.kernelModules = [ "kvm-amd" ];
-
-	virtualisation.waydroid.enable = true;
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "marko";
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
   nix.settings.experimental-features = [ "nix-command" "flakes"];
-  users.defaultUserShell = "/run/current-system/sw/bin/fish";
+	programs.fish.enable = true;
+  users.defaultUserShell = pkgs.fish;
   system.stateVersion = "24.11"; 
 
 }
