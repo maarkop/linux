@@ -1,6 +1,5 @@
 { config, pkgs, ... } : let
-	androidHome =  "/opt/android-sdk";
-	sdkmanager = "${pkgs.sdkmanager}/bin/sdkmanager";
+	androidHome =  "/opt/android-sdk/";
 in {
 
 	environment.variables = {
@@ -23,13 +22,11 @@ in {
     serviceConfig = {
       Type = "oneshot";
       ExecStart = ''
-				${sdkmanager} "platform-tools" "build-tools;34.0.0" "tools" 
-				${sdkmanager} "platforms;android-34" "cmdline-tools;9.0" 
-				${sdkmanager} "ndk-bundle;r28" "ndk;r28" "skiaparser;3"
+				${pkgs.sdkmanager}/bin/sdkmanagerbuild-tools;34.0.0" \
+				"tools" "platforms;android-34" "cmdline-tools;9.0" \
+				"ndk-bundle;r28" "ndk;r28" "skiaparser;3"
       '';
-			Environment = [
-        "ANDROID_HOME=${androidHome}"
-      ];
+			Environment = [ "ANDROID_HOME=${androidHome}" ];
     };
     preStart = '' mkdir -p ${androidHome} '';
   };
