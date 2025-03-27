@@ -16,7 +16,7 @@ in {
 	programs.adb.enable = true;
 
 	systemd.services.android-sdk-setup = {
-    description = "Install Android SDK components using sdkmanager (as root)";
+    description = "Install Android SDK components using sdkmanager";
     after = [ "network.target" ];
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
