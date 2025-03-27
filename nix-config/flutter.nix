@@ -1,13 +1,13 @@
 { config, pkgs, ... } : let
-	androidHome = "/home/marko/Documents/Dev/SDK/Android";
+	androidHome = "${config.users.users.marko.home}/Dev/SDK/Android";
+	sdkmanager = "${pkgs.sdkmanager}/bin/sdkmanager";
 in {
 
 	environment.variables = {
 		EDITOR = "nvim";
-		DOCS = "/home/marko/Documents";
+		ANDROID_HOME = androidHome;
+    JAVA_HOME = pkgs.openjdk17.home;
 		CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
-    JAVA_HOME = "${pkgs.openjdk17.home}";
-		ANDROID_HOME = "${androidHome}";
 	};
 
 	virtualisation.waydroid.enable = true;
@@ -23,7 +23,9 @@ in {
     serviceConfig = {
       Type = "oneshot";
       ExecStart = ''
-        ${pkgs.sdkmanager}/bin/sdkmanager "platform-tools" "build-tools;34.0.0" "platforms;android-34" "cmdline-tools;9.0" "ndk-bundle;r28" "ndk;r28" "tools" "skiaparser;3"
+				${sdkmanager} "platform-tools" "build-tools;34.0.0" "tools" 
+				${sdkmanager} "platforms;android-34" "cmdline-tools;9.0" 
+				${sdkmanager} "ndk-bundle;r28" "ndk;r28" "skiaparser;3"
       '';
       User = "${config.users.users.marko.name}";
 			Environment = [
