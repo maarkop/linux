@@ -27,6 +27,8 @@
 		#Media
 		storj-uplink deluge
 		retroarchFull vlc
+		yt-dlp amberol
+		zenity
 	];
 
 
