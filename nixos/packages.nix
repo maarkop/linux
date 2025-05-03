@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs;[
 		#System
 		fish flatpak zsh
+		blackbox-terminal
 
 		#Gnome
 		nerd-fonts.jetbrains-mono
@@ -19,8 +20,8 @@
 		neovim git gcc 
 		
 		#Flutter
-		firebase-tools
-		flutter openjdk17
+		openjdk17 unzip firebase-tools
+		clang cmake ninja pkg-config
 		steam-run google-chrome
 		waydroid sdkmanager
 

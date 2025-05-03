@@ -35,10 +35,4 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
-	boot.loader.grub = {
-    enable = true;
-    device = "/dev/sda2";
-    enableOSProber = true;
-  };
 }

@@ -1,5 +1,7 @@
 { config, pkgs, ... } : let
-	androidHome = "${config.users.users.marko.home}/.local/share/android-sdk";
+	sdkHome = "${config.users.users.marko.home}/.local/share";
+	androidHome = "${sdkHome}/android-sdk";
+	flutterHome = "${sdkHome}/flutter-sdk";
 in {
 
 	environment.variables = {
@@ -15,20 +17,27 @@ in {
 	programs.nix-ld.enable = true;
 	programs.adb.enable = true;
 
+	programs.fish.interactiveShellInit = ''
+		fish_add_path ${flutterHome}/bin
+	'';
+
 	systemd.services.android-sdk-setup = {
     description = "Install Android SDK components using sdkmanager";
     after = [ "network.target" ];
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = ''
-				${pkgs.sdkmanager}/bin/sdkmanager "platforms;android-34" \
-				"build-tools;34.0.0" "ndk-bundle;r28" "platform-tools" \
-				"skiaparser;3" "tools" "cmdline-tools;9.0" "ndk;r28"
-      '';
 			Environment = [ "ANDROID_HOME=${androidHome}" ];
 			User = "${config.users.users.marko.name}";
     };
     preStart = ''mkdir -p ${androidHome}'';
+		script = ''
+				if [ ! -d "${flutterHome}" ]; then
+					${pkgs.git}/bin/git clone https://github.com/flutter/flutter.git ${flutterHome}
+				fi
+				${pkgs.sdkmanager}/bin/sdkmanager "platforms;android-34" \
+				"build-tools;34.0.0" "ndk-bundle;r28" "platform-tools" \
+				"skiaparser;3" "tools" "cmdline-tools;9.0" "ndk;r28"
+		'';
   };
 }
