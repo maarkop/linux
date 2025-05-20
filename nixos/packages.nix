@@ -28,14 +28,13 @@
 		storj-uplink deluge
 		retroarchFull vlc
 		yt-dlp amberol
-		zenity
+		zenity eartag steam
 	];
 
 
   services.flatpak.packages = [
 		"com.github.tchx84.Flatseal"
     "app.zen_browser.zen"
-		"app.drey.EarTag"
   ];
 
 	services.xserver.excludePackages = (with pkgs; [ xterm ]);
