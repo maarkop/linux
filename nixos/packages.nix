@@ -7,7 +7,7 @@
 
   environment.systemPackages = with pkgs;[
 		#System
-		fish flatpak zsh
+		fish flatpak zsh i2p
 		blackbox-terminal
 
 		#Gnome
@@ -21,9 +21,8 @@
 		
 		#Flutter
 		openjdk17 unzip firebase-tools
+		steam-run waydroid sdkmanager
 		clang cmake ninja pkg-config
-		steam-run google-chrome
-		waydroid sdkmanager
 
 		#Media
 		storj-uplink deluge
