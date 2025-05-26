@@ -4,11 +4,12 @@
   nixpkgs.config.allowUnfree = true;
 	services.printing.enable = false;
   services.flatpak.enable = true;
+	programs.steam.enable = true;
 
   environment.systemPackages = with pkgs;[
 		#System
 		fish flatpak zsh i2p
-		blackbox-terminal
+		blackbox-terminal fzf rclone
 
 		#Gnome
 		nerd-fonts.jetbrains-mono
@@ -17,7 +18,7 @@
 		wl-clipboard
 
 		#Development
-		neovim git gcc 
+		neovim git gcc
 		
 		#Flutter
 		openjdk17 unzip firebase-tools
@@ -27,7 +28,8 @@
 		#Media
 		storj-uplink deluge
 		retroarchFull vlc
-		zenity eartag steam
+		zenity eartag 
+		metadata-cleaner
 	];
 
 
