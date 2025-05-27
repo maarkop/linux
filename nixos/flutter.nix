@@ -8,6 +8,7 @@ in {
 		EDITOR = "nvim";
 		ANDROID_HOME = androidHome;
     JAVA_HOME = pkgs.openjdk17.home;
+		ZDOTDIR = "${config.users.users.marko.home}/.config/zsh";
 		CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
 	};
 

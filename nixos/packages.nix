@@ -5,11 +5,12 @@
 	services.printing.enable = false;
   services.flatpak.enable = true;
 	programs.steam.enable = true;
+	programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs;[
 		#System
-		fish flatpak zsh i2p
-		blackbox-terminal fzf rclone
+		i2p zinit fzf
+		blackbox-terminal rclone
 
 		#Gnome
 		nerd-fonts.jetbrains-mono
@@ -29,7 +30,7 @@
 		storj-uplink deluge
 		retroarchFull vlc
 		zenity eartag 
-		metadata-cleaner
+		bombadillo
 	];
 
 

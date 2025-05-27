@@ -39,8 +39,7 @@
   systemd.services."autovt@tty1".enable = false;
 
   nix.settings.experimental-features = [ "nix-command" "flakes"];
-	programs.fish.enable = true;
-  users.defaultUserShell = pkgs.fish;
+  users.defaultUserShell = pkgs.zsh;
   system.stateVersion = "24.11"; 
 
 }
