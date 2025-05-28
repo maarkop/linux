@@ -5,7 +5,6 @@
 	services.printing.enable = false;
   services.flatpak.enable = true;
 	programs.steam.enable = true;
-	programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs;[
 		#System
@@ -31,6 +30,9 @@
 		retroarchFull vlc
 		zenity eartag 
 		bombadillo
+
+		#ZSH
+		zsh-powerlevel10k
 	];
 
 
@@ -50,4 +52,31 @@
 		gnome-maps simple-scan
 		gnome-characters yelp
 	]);
+
+	environment.etc."powerlevel10k/p10k.zsh".source = ./p10k.zsh;
+
+	programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    enableBashCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+    histSize = 10000;
+		shellInit = ''
+    	unset ZSH_NEW_USER_INIT
+		'';
+    promptInit = ''
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+			source /etc/powerlevel10k/p10k.zsh
+
+      # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+      # Initialization code that may require console input (password prompts, [y/n]
+      # confirmations, etc.) must go above this block; everything else may go below.
+      if [[ -r "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+        source "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+      fi
+
+    '';
+  };
+
 }

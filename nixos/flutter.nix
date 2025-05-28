@@ -2,14 +2,19 @@
 	sdkHome = "${config.users.users.marko.home}/.local/share";
 	androidHome = "${sdkHome}/android-sdk";
 	flutterHome = "${sdkHome}/flutter-sdk";
+	configDir = builtins.dirOf config.file;
 in {
 
 	environment.variables = {
 		EDITOR = "nvim";
 		ANDROID_HOME = androidHome;
     JAVA_HOME = pkgs.openjdk17.home;
-		ZDOTDIR = "${config.users.users.marko.home}/.config/zsh";
+		#ZDOTDIR = "${config.users.users.marko.home}/.config/zsh";
 		CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
+		PATH = [
+			"$PATH"
+			"${flutterHome}/bin/"
+		];
 	};
 
 	virtualisation.waydroid.enable = true;
@@ -17,10 +22,6 @@ in {
 	boot.kernelModules = [ "kvm-amd" ];
 	programs.nix-ld.enable = true;
 	programs.adb.enable = true;
-
-	programs.fish.interactiveShellInit = ''
-		fish_add_path ${flutterHome}/bin
-	'';
 
 	systemd.services.android-sdk-setup = {
     description = "Install Android SDK components using sdkmanager";
