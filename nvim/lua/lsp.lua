@@ -12,6 +12,5 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- Setup language servers
 local mason_lspconfig = require("mason-lspconfig")
 
-
-require("deno-nvim").setup({
-})
+require("flutter-tools").setup {}
+require("deno-nvim").setup{}

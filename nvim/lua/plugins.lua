@@ -38,7 +38,10 @@ require("lazy").setup({
   { "L3MON4D3/LuaSnip" },
 
   -- Flutter tools
-  { "nvim-flutter/flutter-tools.nvim" },
+  { "nvim-flutter/flutter-tools.nvim",
+		config = true,
+		lazy = false,
+	},
 
   -- Other utilities
   { "nvim-lua/plenary.nvim" },
