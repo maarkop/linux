@@ -15,6 +15,7 @@
 				./packages.nix
 				./flutter.nix
 				./gnome.nix
+				./zsh.nix
       ];
     };
 
