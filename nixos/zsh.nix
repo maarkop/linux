@@ -1,6 +1,6 @@
 { config, pkgs, ... } : let
 	home = config.users.users.marko.home;
-	zshDir = "${home}/.local/share/zsh";
+	zshDir = "${home}/.cache/zsh";
 in {
 
 	environment = {

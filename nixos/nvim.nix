@@ -3,6 +3,7 @@
   programs.nvf = {
     enable = true;
     settings.vim = {
+      undoFile.enable = true;
       autocomplete.nvim-cmp.enable = true;
       options = {
         tabstop = 2;

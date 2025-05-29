@@ -1,5 +1,4 @@
 { pkgs, ... } : {
-
 	documentation.nixos.enable = false;
   nixpkgs.config.allowUnfree = true;
 	services.printing.enable = false;
@@ -8,9 +7,7 @@
 
   environment.systemPackages = with pkgs;[
 		#System
-		i2p zinit fzf rclone
-		blackbox-terminal
-		git gcc
+		i2p rclone git gcc fzf
 
 		#Media
 		storj-uplink deluge
