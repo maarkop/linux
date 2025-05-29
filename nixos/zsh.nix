@@ -5,8 +5,8 @@ in {
 
 	environment = {
 		etc."powerlevel10k/p10k.zsh".source = ./p10k.zsh;
-		variables = {ZDOTDIR = "${zshDir}";};
-    systemPackages = [ pkgs.zsh-powerlevel10k ];
+    variables = { ZDOTDIR = zshDir; };
+    systemPackages = with pkgs; [ zsh-powerlevel10k zsh-fzf-history-search];
 	};
 
   users.defaultUserShell = pkgs.zsh;
@@ -19,7 +19,6 @@ in {
     syntaxHighlighting.enable = true;
     histSize = 10000;
 		histFile = "${zshDir}/.zsh_history";
-    historySubstringSearch.enable = true;
 		shellInit = ''
 			mkdir -p ${zshDir}
 			touch ${zshDir}/.zshrc
@@ -28,6 +27,7 @@ in {
 		'';
     promptInit = ''
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      source ${pkgs.zsh-fzf-history-search}/share/zsh-fzf-history-search/zsh-fzf-history-search.zsh
 			source /etc/powerlevel10k/p10k.zsh
 
       if [[ -r "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
