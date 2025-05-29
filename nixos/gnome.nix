@@ -1,11 +1,16 @@
 { config, pkgs, lib, ... }: {
-  environment.systemPackages = with pkgs.gnomeExtensions; [
+  environment.systemPackages = (with pkgs.gnomeExtensions; [
     system-monitor
     blur-my-shell
     tiling-shell
 		just-perfection
 		app-icons-taskbar
-  ];
+  ]) ++ (with pkgs; [
+		nerd-fonts.jetbrains-mono
+		gnome-extension-manager
+		dconf dconf-editor gnome-tweaks
+		wl-clipboard
+  ]);
 	
 	fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 

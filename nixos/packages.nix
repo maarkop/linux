@@ -1,4 +1,4 @@
-{ config, pkgs, ... } : {
+{ pkgs, ... } : {
 
 	documentation.nixos.enable = false;
   nixpkgs.config.allowUnfree = true;
@@ -10,29 +10,13 @@
 		#System
 		i2p zinit fzf rclone
 		blackbox-terminal
-
-		#Gnome
-		nerd-fonts.jetbrains-mono
-		gnome-extension-manager
-		dconf dconf-editor gnome-tweaks
-		wl-clipboard
-
-		#Development
-		neovim git gcc
-		
-		#Flutter
-		openjdk17 unzip firebase-tools
-		steam-run waydroid sdkmanager
-		clang cmake ninja pkg-config
+		git gcc
 
 		#Media
 		storj-uplink deluge
 		retroarchFull vlc
 		zenity eartag 
 		bombadillo
-
-		#ZSH
-		zsh-powerlevel10k
 	];
 
 
@@ -52,6 +36,5 @@
 		gnome-maps simple-scan
 		gnome-characters yelp
 	]);
-
 
 }

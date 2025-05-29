@@ -4,7 +4,6 @@
 	androidHome = "${sdkHome}/android-sdk";
 	flutterHome = "${sdkHome}/flutter-sdk";
 in {
-
 	environment.variables = {
 		EDITOR = "nvim";
 		ANDROID_HOME = androidHome;
@@ -15,6 +14,12 @@ in {
 			"${flutterHome}/bin/"
 		];
 	};
+
+	environment.systemPackages = with pkgs;[
+		openjdk17 unzip firebase-tools
+		steam-run waydroid sdkmanager
+		clang cmake ninja pkg-config
+	];
 
 	virtualisation.waydroid.enable = true;
 	virtualisation.libvirtd.enable = true;
