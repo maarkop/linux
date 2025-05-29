@@ -19,6 +19,7 @@ in {
     syntaxHighlighting.enable = true;
     histSize = 10000;
 		histFile = "${zshDir}/.zsh_history";
+    historySubstringSearch.enable = true;
 		shellInit = ''
 			mkdir -p ${zshDir}
 			touch ${zshDir}/.zshrc

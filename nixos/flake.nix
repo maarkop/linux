@@ -7,7 +7,7 @@
 		nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = { self, nix-flatpak, nixpkgs, nvf, ... }: {
+  outputs = { nix-flatpak, nixpkgs, nvf, ... }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       modules = [
         nix-flatpak.nixosModules.nix-flatpak
