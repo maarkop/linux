@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: {
+{ pkgs, lib, ... }: {
   environment.systemPackages = (with pkgs.gnomeExtensions; [
     system-monitor
     blur-my-shell
@@ -30,7 +30,7 @@
         "org/gnome/desktop/calendar".show-weekdate = true;
         "org/gnome/desktop/input-sources".sources = [
           (mkTuple [ "xkb" "us" ])
-          (mkTuple [ "xkb" "lt" ])
+          ######################################(mkTuple [ "xkb" "lt" ])
         ];
         "org/gnome/desktop/media-handling".automount = false;
         "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
@@ -88,26 +88,26 @@
         ];
         "org/gnome/shell/extensions/blur-my-shell".color-and-noise = false;
         "org/gnome/shell/extensions/blur-my-shell/applications".blur = false;
-				"org/gnome/shell/extensions/blur-my-shell/panel" = {
-					blur = true;
-					sigma = "0";
+        "org/gnome/shell/extensions/blur-my-shell/panel" = {#Only these wont apply
+          brightness = mkDouble 1.0;
+          style-panel = mkInt32 3;
 					static-blur = false;
-					style-panel = "3";
+					blur = true;
 				};
 				"org/gnome/shell/extensions/just-perfection" = {
-					dash = false;
-					power-icon = false;
+					power-icon = false; #Menja se
 					search = false;
+					dash = false;
 				};
         "org/gnome/shell/extensions/aztaskbar".notification-badges = false;
 
 				"org/gnome/desktop/interface" = {
-					monospace-font-name = [ "JetBrainsMono Nerd Font Mono Semi-Bold 10" ];
-					document-font-name = [ "JetBrainsMono Nerd Font Mono Semi-Bold 10" ];
-					font-name = [ "JetBrainsMono Nerd Font Mono Semi-Bold 10" ];
+					monospace-font-name = "JetBrainsMono Nerd Font Bold 10";
+					document-font-name = "JetBrainsMono Nerd Font Bold 10";
+					font-name = "JetBrainsMono Nerd Font Bold 10";
 				};
 				"org/gnome/desktop/wm/preferences" = {
-					titlebar-font = "JetBrainsMono Nerd Font Mono Semi-Bold 10";
+					titlebar-font = "JetBrainsMono Nerd Font Bold 10";
 				};
       };
     }];

@@ -22,5 +22,9 @@
       ];
     };
 
+    devShell.default = nixpkgs.legacyPackages.x86_64-linux.mkShell {
+      buildInputs = [ nixpkgs.legacyPackages.x86_64-linux.flutter332 ];
+    };
+
   };
 }
