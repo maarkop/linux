@@ -14,6 +14,7 @@
 				nvf.nixosModules.default
 				./hardware-configuration.nix
         ./configuration.nix
+        ./syncthing.nix
 				./packages.nix
 				./flutter.nix
 				./gnome.nix

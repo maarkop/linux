@@ -4,7 +4,7 @@
 	services.printing.enable = false;
   services.flatpak.enable = true;
 	programs.steam.enable = true;
-
+  
   environment.systemPackages = with pkgs;[
 		#System
 		i2p rclone git gcc fzf
@@ -13,7 +13,7 @@
 		storj-uplink deluge
 		retroarchFull vlc
 		zenity eartag 
-		bombadillo
+		bombadillo firefox
 	];
 
 
