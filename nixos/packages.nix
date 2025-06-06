@@ -2,25 +2,30 @@
 	documentation.nixos.enable = false;
   nixpkgs.config.allowUnfree = true;
 	services.printing.enable = false;
-  services.flatpak.enable = true;
-	programs.steam.enable = true;
+  programs.firefox.enable = true;
+  programs.git.enable = true;
+  services.i2p.enable = true;
+
+  programs.steam = {
+    enable = true;
+    extraCompatPackages = [ pkgs.proton-ge-bin ];
+  };
   
   environment.systemPackages = with pkgs;[
-		#System
-		i2p rclone git gcc fzf
-
-		#Media
+		rclone gcc fzf p7zip
 		storj-uplink deluge
 		retroarchFull vlc
 		zenity eartag 
-		bombadillo firefox
+		bombadillo
 	];
 
-
-  services.flatpak.packages = [
-		"com.github.tchx84.Flatseal"
-    "app.zen_browser.zen"
-  ];
+  services.flatpak = {
+    enable = true;
+    packages = [
+		  "com.github.tchx84.Flatseal"
+      "app.zen_browser.zen"
+    ];
+  };
 
 	services.xserver.excludePackages = (with pkgs; [ xterm ]);
 
@@ -33,5 +38,4 @@
 		gnome-maps simple-scan
 		gnome-characters yelp
 	]);
-
 }

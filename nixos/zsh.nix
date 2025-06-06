@@ -6,7 +6,7 @@ in {
 	environment = {
 		etc."powerlevel10k/p10k.zsh".source = ./p10k.zsh;
     variables = { ZDOTDIR = zshDir; };
-    systemPackages = with pkgs; [ zsh-powerlevel10k zsh-fzf-history-search];
+    systemPackages = with pkgs; [ zsh-powerlevel10k];
 	};
 
   users.defaultUserShell = pkgs.zsh;
@@ -27,8 +27,10 @@ in {
 		'';
     promptInit = ''
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      source ${pkgs.zsh-fzf-history-search}/share/zsh-fzf-history-search/zsh-fzf-history-search.zsh
 			source /etc/powerlevel10k/p10k.zsh
+
+      setopt HIST_IGNORE_SPACE
+      eval "$(fzf --zsh)"
 
       if [[ -r "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
         source "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
