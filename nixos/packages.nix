@@ -1,4 +1,5 @@
 { pkgs, ... } : {
+  services.input-remapper.enable = true;
 	documentation.nixos.enable = false;
   nixpkgs.config.allowUnfree = true;
 	services.printing.enable = false;
