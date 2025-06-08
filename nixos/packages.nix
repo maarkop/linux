@@ -18,6 +18,9 @@
 		retroarchFull vlc
 		zenity eartag 
 		bombadillo
+
+    #TEST
+    gnome-randr wlr-randr
 	];
 
   services.flatpak = {

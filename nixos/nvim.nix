@@ -5,6 +5,10 @@
     settings.vim = {
       undoFile.enable = true;
       autocomplete.nvim-cmp.enable = true;
+      clipboard = {
+        enable = true;
+        registers = "unnamedplus";
+      };
       options = {
         tabstop = 2;
         shiftwidth = 2;
