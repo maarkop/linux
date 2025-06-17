@@ -16,7 +16,6 @@ in {
 		steam-run waydroid sdkmanager
 		clang cmake ninja pkg-config
 
-    #Debatable
     atk cairo libepoxy gdk-pixbuf
     glib gtk3 harfbuzz pango pcre
     udev alsa-lib glibc zip
@@ -35,7 +34,7 @@ in {
     serviceConfig = {
       Type = "oneshot";
 			Environment = [ "ANDROID_HOME=${androidHome}" ];
-			User = "${config.users.users.marko.name}";
+			User = config.users.users.marko.name;
     };
     preStart = ''mkdir -p ${androidHome}'';
 		script = ''

@@ -1,8 +1,6 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... } : {
   environment.systemPackages = (with pkgs.gnomeExtensions; [
-    system-monitor
     blur-my-shell
-    tiling-shell
 		just-perfection
 		app-icons-taskbar
   ]) ++ (with pkgs; [
@@ -12,16 +10,17 @@
 		wl-clipboard
   ]);
 	
-	fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
-
-	fonts.fontconfig = {
-		enable = true;
-		defaultFonts = {
-			monospace = [ "JetBrainsMono Nerd Font Mono Semi-Bold" ];
-			sansSerif = [ "JetBrainsMono Nerd Font Mono Semi-Bold" ];
-			serif = [ "JetBrains MonoNerd Font Mono Semi-Bold" ];
-		};
-	};
+  fonts = {
+    packages = [ pkgs.nerd-fonts.jetbrains-mono ];
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        monospace = [ "JetBrainsMono Nerd Font Mono Semi-Bold" ];
+        sansSerif = [ "JetBrainsMono Nerd Font Mono Semi-Bold" ];
+        serif = [ "JetBrains MonoNerd Font Mono Semi-Bold" ];
+      };
+    };
+  };
 
 
 	programs.dconf.profiles = {
@@ -75,7 +74,6 @@
         "org/gnome/shell/extensions/blur-my-shell".color-and-noise = false;
         "org/gnome/shell/extensions/blur-my-shell/applications".blur = false;
 				"org/gnome/shell/extensions/just-perfection" = {
-					power-icon = false;
 					search = false;
 					dash = false;
 				};
@@ -90,5 +88,4 @@
       };
     }];
   };
-
 }

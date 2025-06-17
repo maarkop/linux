@@ -18,8 +18,6 @@
       enable = true;
       xkb.variant = "";
       xkb.layout = "us";
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
     };
     pulseaudio.enable = false;
     pipewire = {
@@ -28,9 +26,13 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-    displayManager.autoLogin = {
-      enable = true;
-      user = "marko";
+    desktopManager.gnome.enable = true;
+    displayManager = {
+      gdm.enable = true;
+      autoLogin = {
+        enable = true;
+        user = "marko";
+      };
     };
   };
 
@@ -47,4 +49,9 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes"];
   system.stateVersion = "24.11"; 
+
+  virtualisation.docker.enable = true;
+  users.extraGroups.docker.members = [ "marko" ];
+  programs.mtr.enable = true;
+
 }

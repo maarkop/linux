@@ -13,14 +13,10 @@
   };
   
   environment.systemPackages = with pkgs;[
-		rclone gcc fzf p7zip
-		storj-uplink deluge
+		rclone deluge eartag 
+    gcc fzf bombadillo
 		retroarchFull vlc
-		zenity eartag 
-		bombadillo
-
-    #TEST
-    gnome-randr wlr-randr
+    kooha
 	];
 
   services.flatpak = {
@@ -31,9 +27,8 @@
     ];
   };
 
-	services.xserver.excludePackages = (with pkgs; [ xterm ]);
-
-	environment.gnome.excludePackages = (with pkgs; [
+	services.xserver.excludePackages = [ pkgs.xterm ];
+	environment.gnome.excludePackages = with pkgs; [
 		geary gedit totem seahorse
 		gnome-tour gnome-contacts
 		gnome-music gnome-photos
@@ -41,5 +36,5 @@
 		gnome-shell-extensions
 		gnome-maps simple-scan
 		gnome-characters yelp
-	]);
+	];
 }
