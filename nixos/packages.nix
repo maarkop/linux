@@ -14,8 +14,7 @@
   
   environment.systemPackages = with pkgs;[
     gcc fzf bombadillo vlc deluge eartag 
-		retroarchFull kooha lazygit
-
+		retroarchFull kooha lazygit tuba
     ffmpeg imagemagick optipng jpegoptim
 	];
 
@@ -29,9 +28,9 @@
 
 	services.xserver.excludePackages = [ pkgs.xterm ];
 	environment.gnome.excludePackages = with pkgs; [
-		cheese snapshot epiphany gnome-shell-extensions
 		gnome-maps simple-scan gnome-characters yelp
     gnome-contacts gnome-music gnome-photos
+		cheese snapshot gnome-shell-extensions
 		geary gedit totem seahorse gnome-tour
 	];
 }
