@@ -14,7 +14,7 @@
   
   environment.systemPackages = with pkgs;[
     gcc fzf bombadillo vlc deluge eartag 
-		retroarchFull kooha lazygit tuba
+		retroarchFull kooha lazygit
     ffmpeg imagemagick optipng jpegoptim
 	];
 
