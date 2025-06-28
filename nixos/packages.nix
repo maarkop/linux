@@ -16,7 +16,7 @@
     gcc fzf bombadillo vlc deluge eartag 
 		retroarchFull kooha lazygit
     ffmpeg imagemagick optipng jpegoptim
-    storj-uplink
+    storj-uplink addwater
 	];
 
   services.flatpak = {
