@@ -85,6 +85,10 @@
 				"org/gnome/desktop/wm/preferences" = {
 					titlebar-font = "JetBrainsMono Nerd Font Bold 10";
 				};
+        "dev/qwery/AddWater/Firefox" = {
+          theme-enabled = true;
+          tabs-as-headerbar = true;
+        };
       };
     }];
   };
