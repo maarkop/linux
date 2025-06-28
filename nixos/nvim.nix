@@ -12,6 +12,9 @@
       options = {
         tabstop = 2;
         shiftwidth = 2;
+        laststatus = 0;
+        number = false;
+        relativenumber = false;
       };
       theme = {
         transparent = true;
