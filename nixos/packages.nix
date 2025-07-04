@@ -16,7 +16,7 @@
     gcc fzf bombadillo vlc deluge eartag 
     ffmpeg imagemagick optipng jpegoptim
 		retroarchFull kooha lazygit foliate
-    storj-uplink addwater
+    storj-uplink addwater amberol
 	];
 
   services.flatpak = {
