@@ -13,7 +13,7 @@
   };
   
   environment.systemPackages = with pkgs;[
-    gcc fzf bombadillo vlc deluge eartag 
+    gcc fzf bombadillo vlc fragments eartag 
     ffmpeg imagemagick optipng jpegoptim
 		retroarchFull kooha lazygit foliate
     storj-uplink addwater amberol
