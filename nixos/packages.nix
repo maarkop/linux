@@ -5,7 +5,7 @@
 	services.printing.enable = false;
   programs.firefox.enable = true;
   programs.git.enable = true;
-  #services.i2p.enable = true;
+  services.i2p.enable = true;
 
   programs.steam = {
     enable = true;
@@ -17,6 +17,7 @@
     ffmpeg imagemagick optipng jpegoptim
 		retroarchFull kooha lazygit foliate
     storj-uplink addwater amberol
+    nodejs nodePackages.npm
 	];
 
   services.flatpak = {
