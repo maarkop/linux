@@ -17,7 +17,7 @@
     ffmpeg imagemagick optipng jpegoptim
 		retroarchFull kooha lazygit foliate
     storj-uplink addwater amberol
-    nodejs nodePackages.npm
+    syncthing
 	];
 
   services.flatpak = {
