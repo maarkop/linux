@@ -12,7 +12,6 @@
 				nvf.nixosModules.default
 				./hardware-configuration.nix
         ./configuration.nix
-        ./bash/scripts.nix
 				./packages.nix
 				./flutter.nix
 				./gnome.nix
