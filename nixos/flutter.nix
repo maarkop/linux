@@ -18,7 +18,7 @@ in {
 
     atk cairo libepoxy gdk-pixbuf
     glib gtk3 harfbuzz pango pcre
-    udev alsa-lib glibc zip
+    udev alsa-lib glibc zip melos
 	];
 
 	virtualisation.waydroid.enable = true;
