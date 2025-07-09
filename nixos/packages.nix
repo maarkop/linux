@@ -11,6 +11,7 @@
   networking.firewall.allowedTCPPorts = [ 
     4444 7657 #I2P 
     22000     #Syncthing 
+    42410     #I2P Custom
   ];
 
   networking.firewall.allowedUDPPorts = [ 
