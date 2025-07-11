@@ -33,7 +33,7 @@
     gcc fzf bombadillo vlc fragments eartag 
     ffmpeg imagemagick optipng jpegoptim
 		retroarchFull kooha lazygit foliate
-    storj-uplink addwater amberol
+    storj-uplink addwater amberol rage
     syncthing
 	];
 
