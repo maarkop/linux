@@ -12,10 +12,10 @@
   };
   
   environment.systemPackages = with pkgs;[
-    gcc fzf bombadillo vlc fragments eartag 
+    gcc fzf bombadillo celluloid fragments
     ffmpeg imagemagick optipng jpegoptim
+    addwater amberol syncthing eartag 
 		retroarchFull lazygit foliate
-    addwater amberol syncthing
 	];
 
   services.flatpak = {
