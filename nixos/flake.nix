@@ -13,6 +13,7 @@
 				./hardware-configuration.nix
         ./configuration.nix
 				./packages.nix
+        ./network.nix
         ./rutoken.nix
 				./flutter.nix
 				./gnome.nix
