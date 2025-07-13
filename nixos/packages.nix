@@ -16,6 +16,7 @@
     ffmpeg imagemagick optipng jpegoptim
     addwater amberol syncthing eartag 
 		retroarchFull lazygit foliate
+    transmission_4-gtk
 	];
 
   services.flatpak = {
