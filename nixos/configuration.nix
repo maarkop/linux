@@ -4,11 +4,6 @@
     efi.canTouchEfiVariables = true;
   };
 
-  networking = {
-    hostName = "nixos";
-    networkmanager.enable = true;
-  };
-
   time.timeZone = "Europe/Belgrade";
   i18n.defaultLocale = "en_US.UTF-8";
   security.rtkit.enable = true;
@@ -53,5 +48,4 @@
   virtualisation.docker.enable = true;
   users.extraGroups.docker.members = [ "marko" ];
   programs.mtr.enable = true;
-
 }
