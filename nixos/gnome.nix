@@ -1,12 +1,9 @@
 { pkgs, lib, ... } : {
-  environment.systemPackages = (with pkgs.gnomeExtensions; [
+  environment.systemPackages = with pkgs.gnomeExtensions; [
     blur-my-shell
 		just-perfection
 		app-icons-taskbar
-  ]) ++ (with pkgs; [
-		nerd-fonts.jetbrains-mono
-		gnome-extension-manager
-  ]);
+  ];
 	
   fonts = {
     packages = [ pkgs.nerd-fonts.jetbrains-mono ];
