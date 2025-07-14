@@ -1,5 +1,5 @@
 { pkgs, lib, ... } : {
-  services.gnome.core-utilities.enable = false;
+  services.gnome.core-apps.enable = false;
 	documentation.nixos.enable = false;
   nixpkgs.config.allowUnfree = true;
 	services.printing.enable = false;
@@ -32,6 +32,5 @@
 	services.xserver.excludePackages = [ pkgs.xterm ];
   environment = {
     defaultPackages = lib.mkForce [];
-    gnome.excludePackages = [ pkgs.gnome-tour ];
   };
 }
