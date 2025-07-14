@@ -13,11 +13,11 @@ in {
 
 	programs.zsh = {
     enable = true;
+    histSize = 10000;
     enableCompletion = true;
     enableBashCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
-    histSize = 10000;
 		histFile = "${zshDir}/.zsh_history";
 		shellInit = ''
 			mkdir -p ${zshDir}

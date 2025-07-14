@@ -1,8 +1,6 @@
 { pkgs, lib, ... } : {
   environment.systemPackages = with pkgs.gnomeExtensions; [
-    blur-my-shell
-		just-perfection
-		app-icons-taskbar
+    blur-my-shell just-perfection app-icons-taskbar
   ];
 	
   fonts = {
