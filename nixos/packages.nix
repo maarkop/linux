@@ -1,5 +1,5 @@
 { pkgs, ... } : {
-  services.input-remapper.enable = true;
+  gnome.core-utilities.enable = false;
 	documentation.nixos.enable = false;
   nixpkgs.config.allowUnfree = true;
 	services.printing.enable = false;
@@ -16,6 +16,10 @@
     ffmpeg imagemagick optipng jpegoptim
     addwater amberol syncthing eartag 
 		retroarchFull lazygit foliate
+    gnome-console blackbox
+    nautilus baobab gnome-extension-manager
+    gnome-disk-utility gnome-system-monitor
+    loupe
 	];
 
   services.flatpak = {
@@ -26,12 +30,4 @@
   };
 
 	services.xserver.excludePackages = [ pkgs.xterm ];
-	environment.gnome.excludePackages = with pkgs; [
-		gnome-maps simple-scan gnome-characters yelp
-    gnome-font-viewer gnome-logs gnome-connections
-		cheese snapshot gnome-shell-extensions evince
-    gnome-contacts gnome-music gnome-photos
-		geary gedit totem seahorse gnome-tour
-    decibels
-	];
 }
