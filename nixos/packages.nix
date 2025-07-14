@@ -4,7 +4,6 @@
   nixpkgs.config.allowUnfree = true;
 	services.printing.enable = false;
   programs.firefox.enable = true;
-  services.ollama.enable = true;
   programs.git.enable = true;
 
   programs.steam = {
@@ -12,7 +11,6 @@
     extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
 
-  
   environment.systemPackages = with pkgs;[
     gcc fzf bombadillo celluloid fragments
     ffmpeg imagemagick optipng jpegoptim
