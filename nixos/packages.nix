@@ -10,6 +10,11 @@
     enable = true;
     extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
+
+  services.ollama = {
+    enable = true;
+    loadModels = [ "deepseek-r1:8b" ];
+  };
   
   environment.systemPackages = with pkgs;[
     gcc fzf bombadillo celluloid fragments
@@ -23,6 +28,7 @@
     packages = [
 		  "com.github.tchx84.Flatseal"
       "app.zen_browser.zen"
+      "org.vinegarhq.Sober"
     ];
   };
 
