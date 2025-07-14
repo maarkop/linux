@@ -1,5 +1,5 @@
 { pkgs, ... } : {
-  gnome.core-utilities.enable = false;
+  services.gnome.core-utilities.enable = false;
 	documentation.nixos.enable = false;
   nixpkgs.config.allowUnfree = true;
 	services.printing.enable = false;
