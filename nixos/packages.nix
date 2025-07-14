@@ -21,8 +21,6 @@
   services.flatpak = {
     enable = true;
     packages = [
-		  "com.github.tchx84.Flatseal"
-      "app.zen_browser.zen"
       "org.vinegarhq.Sober"
     ];
   };
@@ -30,8 +28,9 @@
 	services.xserver.excludePackages = [ pkgs.xterm ];
 	environment.gnome.excludePackages = with pkgs; [
 		gnome-maps simple-scan gnome-characters yelp
+    gnome-font-viewer gnome-logs gnome-connections
+		cheese snapshot gnome-shell-extensions evince
     gnome-contacts gnome-music gnome-photos
-		cheese snapshot gnome-shell-extensions
 		geary gedit totem seahorse gnome-tour
 	];
 }
