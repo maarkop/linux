@@ -6,8 +6,6 @@
   ]) ++ (with pkgs; [
 		nerd-fonts.jetbrains-mono
 		gnome-extension-manager
-		dconf dconf-editor gnome-tweaks
-		wl-clipboard
   ]);
 	
   fonts = {
