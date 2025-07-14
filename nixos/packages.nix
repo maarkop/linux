@@ -32,5 +32,6 @@
 		cheese snapshot gnome-shell-extensions evince
     gnome-contacts gnome-music gnome-photos
 		geary gedit totem seahorse gnome-tour
+    decibels
 	];
 }
