@@ -34,7 +34,7 @@
       };
       lsp = {
         enable = true;
-        formatOnSave = true;
+        #formatOnSave = true;
         mappings = {
           hover = "K";
           codeAction = "L";
