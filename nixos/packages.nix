@@ -25,6 +25,7 @@
     packages = [ "org.vinegarhq.Sober" ];
   };
 
+
 	services.xserver.excludePackages = [ pkgs.xterm ];
   environment.gnome.excludePackages = [ pkgs.gnome-tour ];
 }
