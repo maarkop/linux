@@ -17,11 +17,15 @@
     syncthing eartag retroarchFull lazygit foliate
     fzf bombadillo fragments addwater amberol 
     ffmpeg imagemagick optipng jpegoptim
+    blackbox-terminal
 	];
 
   services.flatpak = {
     enable = true;
-    packages = [ "org.vinegarhq.Sober" ];
+    packages = [ 
+      "org.vinegarhq.Sober" 
+      "org.gnome.Epiphany"
+    ];
   };
 
 	services.xserver.excludePackages = [ pkgs.xterm ];
