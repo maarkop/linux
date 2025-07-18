@@ -22,10 +22,7 @@
 
   services.flatpak = {
     enable = true;
-    packages = [ 
-      "org.vinegarhq.Sober" 
-      "org.gnome.Epiphany"
-    ];
+    packages = [ "org.vinegarhq.Sober" ];
   };
 
 	services.xserver.excludePackages = [ pkgs.xterm ];
