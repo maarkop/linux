@@ -12,19 +12,17 @@
   };
 
   environment.systemPackages = with pkgs; [
-    gnome-disk-utility gnome-system-monitor gcc
-    nautilus loupe gnome-console baobab celluloid 
-    syncthing eartag retroarchFull lazygit foliate
     fzf bombadillo fragments addwater amberol 
+    gnome-disk-utility gnome-system-monitor gcc
+    nautilus loupe blackbox-terminal baobab celluloid 
+    syncthing eartag retroarchFull lazygit foliate
     ffmpeg imagemagick optipng jpegoptim
-    blackbox-terminal
 	];
 
   services.flatpak = {
     enable = true;
     packages = [ "org.vinegarhq.Sober" ];
   };
-
 
 	services.xserver.excludePackages = [ pkgs.xterm ];
   environment.gnome.excludePackages = [ pkgs.gnome-tour ];
