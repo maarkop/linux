@@ -47,7 +47,6 @@
       };
       filetree.neo-tree = {
         enable = true;
-        mappings.toggle = "<C-b>";
       };
     };
   };
