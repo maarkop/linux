@@ -43,17 +43,15 @@
       };
       telescope = {
         enable = true;
-        #mappings.findFiles = "<C-P>";
+        mappings.findFiles = "<C-P>";
       };
       filetree.neo-tree.enable = true;
-      keymaps = [
-        {
-          key = "<C-b>";
-          mode = "n";
-          silent = true;
-          action = ":Neotree toggle";
-        }
-      ];
+      keymaps = [{
+        key = "<C-B>";
+        mode = "n";
+        silent = true;
+        action = ":Neotree toggle";
+      }];
     };
   };
 }
