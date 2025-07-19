@@ -14,9 +14,9 @@
   environment.systemPackages = with pkgs; [
     fzf bombadillo fragments addwater amberol 
     gnome-disk-utility gnome-system-monitor gcc
-    nautilus loupe blackbox-terminal baobab celluloid 
     syncthing eartag retroarchFull lazygit foliate
-    ffmpeg imagemagick optipng jpegoptim ptyxis
+    nautilus loupe baobab celluloid ptyxis
+    ffmpeg imagemagick optipng jpegoptim 
 	];
 
   services.flatpak = {
