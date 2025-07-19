@@ -16,7 +16,7 @@
     gnome-disk-utility gnome-system-monitor gcc
     nautilus loupe blackbox-terminal baobab celluloid 
     syncthing eartag retroarchFull lazygit foliate
-    ffmpeg imagemagick optipng jpegoptim
+    ffmpeg imagemagick optipng jpegoptim ptyxis
 	];
 
   services.flatpak = {

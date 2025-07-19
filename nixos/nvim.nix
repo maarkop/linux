@@ -39,6 +39,7 @@
           hover = "K";
           codeAction = "L";
           goToDefinition = "gd";
+          rename = "<leader>rn";
         };
       };
       telescope = {
