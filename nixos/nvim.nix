@@ -1,5 +1,4 @@
 { pkgs, ... } : {
-
   environment.systemPackages = with pkgs; [ 
     neovim wl-clipboard 
   ];
@@ -46,9 +45,8 @@
         enable = true;
         mappings.findFiles = "<C-P>";
       };
-      filetree.nvimTree = {
+      filetree.neoTree = {
         enable = true;
-        openOnSetup = false;
         mappings.toggle = "<C-b>";
       };
     };

@@ -2,7 +2,6 @@
 	home = config.users.users.marko.home;
 	zshDir = "${home}/.cache/zsh";
 in {
-
 	environment = {
 		etc."powerlevel10k/p10k.zsh".source = ./p10k.zsh;
     variables = { ZDOTDIR = zshDir; };

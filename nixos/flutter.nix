@@ -7,7 +7,6 @@ in {
 	environment.variables = {
 		ANDROID_HOME = androidHome;
     JAVA_HOME = pkgs.openjdk17.home;
-		CHROME_EXECUTABLE = "${pkgs.google-chrome}/bin/google-chrome-stable";
 		PATH = [ "$PATH" "${flutterHome}/bin/" ];
 	};
 
