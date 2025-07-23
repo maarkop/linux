@@ -12,11 +12,10 @@
   };
 
   environment.systemPackages = with pkgs; [
-    fzf bombadillo fragments addwater amberol 
-    gnome-disk-utility gnome-system-monitor gcc
-    syncthing eartag retroarchFull lazygit foliate
-    nautilus loupe baobab celluloid ptyxis
-    ffmpeg imagemagick optipng jpegoptim 
+    gnome-disk-utility gnome-system-monitor
+    fzf fragments addwater ptyxis amberol
+    syncthing eartag lazygit foliate gcc
+    nautilus loupe baobab celluloid 
 	];
 
   services.flatpak = {
