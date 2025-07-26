@@ -48,13 +48,11 @@
           buffers = "<C-[>";
         };
       };
-      filetree.neo-tree.enable = true;
-      keymaps = [{
-        key = "<C-B>";
-        mode = "n";
-        silent = true;
-        action = ":Neotree toggle";
-      }];
+      filetree.nvimTree = {
+        enable = true;
+        openOnSetup = false;
+        mappings.toggle = "<C-b>";
+      };
     };
   };
 }
