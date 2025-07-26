@@ -43,7 +43,10 @@
       };
       telescope = {
         enable = true;
-        mappings.findFiles = "<C-P>";
+        mappings = {
+          findFiles = "<C-P>";
+          buffers = "<C-[>";
+        };
       };
       filetree.neo-tree.enable = true;
       keymaps = [{
