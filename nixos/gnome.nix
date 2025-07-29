@@ -41,6 +41,7 @@
         ];
 				"org/gnome/shell/extensions/just-perfection" = {
           panel = false;
+          panel-in-overview = true;
           panel-size = mkUint32 36;
 				};
 				"org/gnome/desktop/interface" = {
