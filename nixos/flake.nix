@@ -17,7 +17,8 @@
 				./flutter.nix
 				./gnome.nix
 				./nvim.nix
-				./zsh.nix
+        ./bash.nix
+        #./zsh.nix
       ];
     };
   };
