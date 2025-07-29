@@ -1,6 +1,6 @@
 { pkgs, lib, ... } : {
   environment.systemPackages = with pkgs.gnomeExtensions; [
-    blur-my-shell just-perfection app-icons-taskbar
+    blur-my-shell just-perfection #app-icons-taskbar
   ];
 	
   fonts = {
@@ -50,7 +50,7 @@
         "org/gnome/shell".enabled-extensions = with pkgs.gnomeExtensions; [
 					blur-my-shell.extensionUuid
 					just-perfection.extensionUuid
-					app-icons-taskbar.extensionUuid
+          #app-icons-taskbar.extensionUuid
         ];
         "org/gnome/shell".disabled-extensions = [
           "dash-to-dock@micxgx.gmail.com"
@@ -63,12 +63,12 @@
           "apps-menu@gnome-shell-extensions.gcampax.github.com"
           "emoji-copy@felipeftn"
         ];
-        "org/gnome/shell/extensions/aztaskbar".notification-badges = false;
-        "org/gnome/shell/extensions/blur-my-shell".color-and-noise = false;
-        "org/gnome/shell/extensions/blur-my-shell/applications".blur = false;
+        #"org/gnome/shell/extensions/aztaskbar".notification-badges = false;
+        #"org/gnome/shell/extensions/blur-my-shell".color-and-noise = false;
+        #"org/gnome/shell/extensions/blur-my-shell/applications".blur = false;
 				"org/gnome/shell/extensions/just-perfection" = {
-					search = false;
-					dash = false;
+          panel = false;
+          panel-size = mkUint32 36;
 				};
 				"org/gnome/desktop/interface" = {
 					monospace-font-name = "JetBrainsMono Nerd Font Bold 10";
