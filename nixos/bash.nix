@@ -1,13 +1,9 @@
 { ... } : {
-  programs.bash.shellInit = ''
-    __fzf_history__() {
-      local selected
-      selected=$(history | fzf +s --tac | sed 's/ *[0-9]* *//')
-      # Inject selected command into shell input
-      READLINE_LINE=$selected
-      READLINE_POINT=\$\{#selected}
-    }
-
-    bind -x '"\C-p": __fzf_history__'
+  programs.bash.promptInit = ''
+    PROMPT_COLOR="1;31m"
+    ((UID)) && PROMPT_COLOR="1;32m"
+    PS1="\n\[\033[$PROMPT_COLOR\][\w]\\$\[\033[0m\] "
+    
+    eval "$(fzf --bash)"
   '';
 }
