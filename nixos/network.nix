@@ -1,5 +1,4 @@
 { ... } : {
-
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
@@ -21,5 +20,4 @@
     i2np.udp.internalPort=42410
     i2np.udp.port=42410
   '';
-
 }
