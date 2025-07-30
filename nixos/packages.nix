@@ -16,6 +16,7 @@
     fzf fragments addwater ptyxis amberol
     syncthing eartag lazygit foliate gcc
     nautilus loupe baobab celluloid 
+    vitetris
 	];
 
   #services.flatpak = {
