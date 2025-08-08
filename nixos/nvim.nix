@@ -18,7 +18,7 @@
         laststatus = 0;
         number = false;
         relativenumber = false;
-        signcolumn = "no";
+        signcolumn = "auto";
       };
       theme = {
         transparent = true;
