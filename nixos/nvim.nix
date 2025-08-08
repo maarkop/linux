@@ -18,6 +18,7 @@
         laststatus = 0;
         number = false;
         relativenumber = false;
+        signcolumn = "no";
       };
       theme = {
         transparent = true;
