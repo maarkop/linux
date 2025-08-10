@@ -15,8 +15,8 @@
     gnome-disk-utility gnome-system-monitor
     fzf fragments addwater ptyxis amberol
     syncthing eartag lazygit foliate gcc
-    nautilus loupe baobab celluloid 
-    vitetris blackbox-terminal
+    nautilus loupe baobab celluloid wine
+    vitetris blackbox-terminal quickemu
 	];
 
   #services.flatpak = {
