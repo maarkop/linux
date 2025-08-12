@@ -18,7 +18,6 @@
 				./gnome.nix
 				./nvim.nix
         ./bash.nix
-        #./zsh.nix
       ];
     };
   };

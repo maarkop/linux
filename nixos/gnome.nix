@@ -10,11 +10,10 @@
       defaultFonts = {
         monospace = [ "JetBrainsMono Nerd Font Mono Semi-Bold" ];
         sansSerif = [ "JetBrainsMono Nerd Font Mono Semi-Bold" ];
-        serif = [ "JetBrains MonoNerd Font Mono Semi-Bold" ];
+        serif     = [ "JetBrains MonoNerd Font Mono Semi-Bold" ];
       };
     };
   };
-
 	programs.dconf.profiles = {
     user.databases = [{
       settings = with lib.gvariant; {
@@ -39,15 +38,21 @@
           "apps-menu@gnome-shell-extensions.gcampax.github.com"
           "emoji-copy@felipeftn"
         ];
+        "org/gnome/settings-daemon/plugins/color" = {
+          night-light-enabled = true;
+          night-light-schedule-automatic = false;
+          night-light-schedule-from = 6.0;
+          night-light-temperature = mkUint32 3532;
+        };
 				"org/gnome/shell/extensions/just-perfection" = {
           panel = false;
           panel-in-overview = true;
-          panel-size = mkUint32 36;
+          panel-size = mkInt32 36;
 				};
 				"org/gnome/desktop/interface" = {
 					monospace-font-name = "JetBrainsMono Nerd Font Bold 10";
-					document-font-name = "JetBrainsMono Nerd Font Bold 10";
-					font-name = "JetBrainsMono Nerd Font Bold 10";
+					document-font-name  = "JetBrainsMono Nerd Font Bold 10";
+					font-name           = "JetBrainsMono Nerd Font Bold 10";
 				};
 				"org/gnome/desktop/wm/preferences" = {
 					titlebar-font = "JetBrainsMono Nerd Font Bold 10";
@@ -56,6 +61,27 @@
           theme-enabled = true;
           tabs-as-headerbar = true;
         };
+        "com/raggesilver/BlackBox" = {
+          font = "JetBrainsMono Nerd Font Bold 10";
+          show-headerbar = false;
+          show-scrollbars = false;
+          floating-controls = true;
+##########terminal-padding = (mkUint32 10 mkUint32 10 mkUint32 10 mkUint32 10);
+        };
+        #"org/gnome/shell/favorite-apps" = [
+        #  "org.gnome.Nautilus.desktop"
+        #  "firefox.desktop"
+        #  "steam.desktop"
+        #  "com.raggesilver.BlackBox.desktop"
+        #];
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+          name = "Terminal";
+          command = "blackbox";
+          binding = "<Super>Return";
+        };
+        #"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings" = (
+        #  "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        #);
       };
     }];
   };
