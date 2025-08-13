@@ -2,7 +2,14 @@
   environment.systemPackages = with pkgs.gnomeExtensions; [
     blur-my-shell just-perfection #app-icons-taskbar
   ];
-	
+
+  services.desktopManager.gnome = {
+    enable = true;
+    extraGSettingsOverrides = ''
+      [org.gnome.mutter]
+      experimental-features=['scale-monitor-framebuffer']
+    '';
+  };
   fonts = {
     packages = [ pkgs.nerd-fonts.jetbrains-mono ];
     fontconfig = {
@@ -27,6 +34,14 @@
 					blur-my-shell.extensionUuid
 					just-perfection.extensionUuid
         ];
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+          name = "Terminal";
+          command = "blackbox";
+          binding = "<Super>Return";
+        };
+        "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        ];
         "org/gnome/shell".disabled-extensions = [
           "dash-to-dock@micxgx.gmail.com"
           "window-list@gnome-shell-extensions.gcampax.github.com"
@@ -37,6 +52,12 @@
           "status-icons@gnome-shell-extensions.gcampax.github.com"
           "apps-menu@gnome-shell-extensions.gcampax.github.com"
           "emoji-copy@felipeftn"
+        ];
+        "org/gnome/shell".favorite-apps = [
+          "org.gnome.Nautilus.desktop"
+          "firefox.desktop"
+          "steam.desktop"
+          "com.raggesilver.BlackBox.desktop"
         ];
         "org/gnome/settings-daemon/plugins/color" = {
           night-light-enabled = true;
@@ -66,22 +87,7 @@
           show-headerbar = false;
           show-scrollbars = false;
           floating-controls = true;
-##########terminal-padding = (mkUint32 10 mkUint32 10 mkUint32 10 mkUint32 10);
         };
-        #"org/gnome/shell/favorite-apps" = [
-        #  "org.gnome.Nautilus.desktop"
-        #  "firefox.desktop"
-        #  "steam.desktop"
-        #  "com.raggesilver.BlackBox.desktop"
-        #];
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-          name = "Terminal";
-          command = "blackbox";
-          binding = "<Super>Return";
-        };
-        #"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings" = (
-        #  "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-        #);
       };
     }];
   };

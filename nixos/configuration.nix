@@ -21,7 +21,6 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-    desktopManager.gnome.enable = true;
     displayManager = {
       gdm.enable = true;
       autoLogin = {
